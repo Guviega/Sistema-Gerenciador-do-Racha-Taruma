@@ -1,3 +1,8 @@
+#IDE files
+nbproject/
+build/
+dist/
+
 # Compiled class file
 *.class
 
