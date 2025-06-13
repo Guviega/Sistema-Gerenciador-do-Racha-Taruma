@@ -14,5 +14,5 @@ public enum TipoVeiculo {
     TURBO,
     MOTO,
     DIESEL
-    
+
 }
