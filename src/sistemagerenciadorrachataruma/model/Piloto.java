@@ -10,6 +10,6 @@ package sistemagerenciadorrachataruma.model;
  */
 public class Piloto {
     
-    private String nome, cpf;
+    private String cpf, nome;
     
 }

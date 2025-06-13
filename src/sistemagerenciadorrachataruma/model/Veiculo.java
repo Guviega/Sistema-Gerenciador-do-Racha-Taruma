@@ -10,6 +10,7 @@ package sistemagerenciadorrachataruma.model;
  */
 public class Veiculo {
     
+    private int numero;
     private TipoVeiculo tipoVeiculo;
     private String modelo;
     private Piloto piloto;

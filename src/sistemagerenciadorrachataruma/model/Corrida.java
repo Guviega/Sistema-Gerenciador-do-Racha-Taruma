@@ -10,6 +10,8 @@ package sistemagerenciadorrachataruma.model;
  */
 public class Corrida {
     
+    private int id;
+    private LocalDateTime dataHora;
     private Veiculo veiculo1, veiculo2;
     
 }
