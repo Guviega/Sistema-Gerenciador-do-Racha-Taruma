@@ -14,6 +14,7 @@ public class Veiculo {
     
     private int numero;
     private TipoVeiculo tipoVeiculo;
+    private int potencia;
     private String modelo;
     private Piloto piloto;
 
