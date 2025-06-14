@@ -13,6 +13,7 @@ import java.util.Objects;
 public class Piloto {
     
     private String cpf, nome;
+    private Equipe equipe;
 
     public Piloto(String cpf, String nome) {
         this.cpf = cpf;
@@ -48,6 +49,14 @@ public class Piloto {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public Equipe getEquipe() {
+        return equipe;
+    }
+
+    public void setEquipe(Equipe equipe) {
+        this.equipe = equipe;
     }
     
 }
