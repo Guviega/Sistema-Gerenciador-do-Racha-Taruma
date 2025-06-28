@@ -4,6 +4,7 @@
  */
 package sistemagerenciadorrachataruma.model;
 
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -14,6 +15,7 @@ public class Piloto {
     
     private String cpf, nome;
     private Equipe equipe;
+    private List<Veiculo> veiculos;
 
     public Piloto(String cpf, String nome) {
         this.cpf = cpf;
