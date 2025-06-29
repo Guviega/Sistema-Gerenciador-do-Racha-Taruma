@@ -4,27 +4,26 @@
  */
 package sistemagerenciadorrachataruma.view;
 
-import javax.swing.JOptionPane;
-
 /**
  *
- * @author 2024020067
+ * @author DELL
  */
-public class CadastrarPilotoView implements Runnable{
+public class RelatorioView implements Runnable {
     
-    private static final CadastrarPilotoView instance = new CadastrarPilotoView();
+    private static final RelatorioView instance = new RelatorioView();
     
-    private CadastrarPilotoView() {
+    private RelatorioView() {
+        
     }
     
-    public static CadastrarPilotoView getInstance() {
+    public static RelatorioView getInstance() {
         return instance;
     }
-    
+
     @Override
     public void run() {
         //TODO
-        JOptionPane.showMessageDialog(null, "Cadastro de piloto");
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

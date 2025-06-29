@@ -4,60 +4,63 @@
  */
 package sistemagerenciadorrachataruma.view;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.WindowConstants;
 import sistemagerenciadorrachataruma.Setup;
 
 /**
  *
  * @author 2024020067
  */
-public class MainView {
-    
-    private static MainView instance = new MainView();
-    
+public class MainView implements Runnable {
+
+    private static final MainView instance = new MainView();
+
     private MainView() {
-        
-        String msg = 
-                  "Escolha uma opcao: \n"
-                + "1 - Cadastrar Veiculo \n"
-                + "2 - Cadastrar Equipe \n"
-                + "3 - Cadastrar Piloto \n"
-                + "4 - Iniciar corrida \n"
-                + "5 - Visualizar resultados \n"
-                + "0 - Sair \n";
-        
-        String option = "";
-        while(!option.equals("0"))
-        option = JOptionPane.showInputDialog(null, msg, Setup.title, JOptionPane.QUESTION_MESSAGE);
-        
-        switch (option) {
-            case "1":
-                break;
-            case "2":
-                break;
-            case "3":
-                CadastrarPilotoView.getInstance();
-                break;
-            case "4":
-                break;
-            case "5":
-                break;
-            case "0":
-                JOptionPane.showMessageDialog(null, "Sistema encerrado", Setup.title, JOptionPane.INFORMATION_MESSAGE);
-                break;
-            default:
-                throw new AssertionError();
-        }
     }
-    
+
     public static MainView getInstance() {
         return instance;
     }
-    
+
+    @Override
+    public void run() {
+
+        String msg
+                = """
+                  Escolha uma opcao: 
+                  1 - Cadastrar Equipe 
+                  2 - Cadastrar Piloto 
+                  3 - Cadastrar Veiculo 
+                  4 - Iniciar corrida 
+                  5 - Visualizar resultados 
+                  0 - Sair 
+                  """;
+
+        String option = "";
+
+        while (!option.equals("0")) {
+
+            option = JOptionPane.showInputDialog(null, msg, Setup.title, JOptionPane.QUESTION_MESSAGE);
+            if (option == null) {
+                break;
+            }
+
+            switch (option) {
+                case "1" -> CadastrarEquipeView.getInstance().run();
+                case "2" -> CadastrarPilotoView.getInstance().run();
+                case "3" -> CadastrarVeiculoView.getInstance().run();
+                case "4" -> CorridaView.getInstance().run();
+                case "5" -> RelatorioView.getInstance().run();
+                case "0" ->
+                    JOptionPane.showMessageDialog(null, "Sistema encerrado", Setup.title, JOptionPane.INFORMATION_MESSAGE);
+                default -> {
+                    if (option.isEmpty()) {
+                        JOptionPane.showMessageDialog(null, "Campo vazio. Informe uma opcao.", Setup.title, JOptionPane.WARNING_MESSAGE);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Opcao invalida", Setup.title, JOptionPane.WARNING_MESSAGE);
+                    }
+                }
+            }
+        }
+    }
 }
