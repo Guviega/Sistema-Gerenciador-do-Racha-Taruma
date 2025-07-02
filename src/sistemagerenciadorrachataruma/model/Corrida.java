@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
  */
 public class Corrida {
     
+    private int numero;
     private LocalDateTime dataHora;
     private Veiculo veiculo1, veiculo2, vencedor;
     private double tempoVeiculo1, tempoVeiculo2, velocidadeVeiculo1, velocidadeVeiculo2;
