@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author DELL
  */
-public class Equipe {
+public class Equipe implements Participante{
     
     private int numero;
     private String nome;
@@ -70,6 +70,11 @@ public class Equipe {
 
     public void setPilotos(List<Piloto> pilotos) {
         this.pilotos = pilotos;
+    }
+
+    @Override
+    public int getId() {
+        return numero;
     }
     
     

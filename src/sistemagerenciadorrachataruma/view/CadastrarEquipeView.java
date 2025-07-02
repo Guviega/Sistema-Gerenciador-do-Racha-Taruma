@@ -4,11 +4,14 @@
  */
 package sistemagerenciadorrachataruma.view;
 
+import javax.swing.JOptionPane;
+import sistemagerenciadorrachataruma.Setup;
+
 /**
  *
  * @author DELL
  */
-public class CadastrarEquipeView implements Runnable{
+public class CadastrarEquipeView implements Runnable {
 
     private static CadastrarEquipeView instance = new CadastrarEquipeView();
 
@@ -23,7 +26,16 @@ public class CadastrarEquipeView implements Runnable{
     @Override
     public void run() {
         //TODO
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        try {
+            int numero = Integer.parseInt(JOptionPane.showInputDialog(null,
+                    "Qual o numero da equipe?", Setup.title, JOptionPane.QUESTION_MESSAGE));
+            String nome = JOptionPane.showInputDialog(null,
+                    "Qual o nome da equipe?", Setup.title, JOptionPane.QUESTION_MESSAGE);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null,
+                    "Digite apenas numeros inteiros, por favor.", Setup.title, JOptionPane.ERROR_MESSAGE);
+            return;
+        }
     }
 
 }

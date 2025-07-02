@@ -11,8 +11,9 @@ import java.util.Objects;
  *
  * @author DELL
  */
-public class Piloto {
+public class Piloto implements Participante{
     
+    private int numero;
     private String cpf, nome;
     private Equipe equipe;
     private List<Veiculo> veiculos;
@@ -59,6 +60,11 @@ public class Piloto {
 
     public void setEquipe(Equipe equipe) {
         this.equipe = equipe;
+    }
+
+    @Override
+    public int getId() {
+        return numero;
     }
     
 }

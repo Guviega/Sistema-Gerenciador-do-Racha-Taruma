@@ -24,7 +24,6 @@ public class MainView implements Runnable {
 
     @Override
     public void run() {
-
         String msg
                 = """
                   Escolha uma opcao: 
@@ -40,27 +39,41 @@ public class MainView implements Runnable {
 
         while (!option.equals("0")) {
 
-            option = JOptionPane.showInputDialog(null, msg, Setup.title, JOptionPane.QUESTION_MESSAGE);
-            if (option == null) {
-                break;
-            }
+            try {
+                option = JOptionPane.showInputDialog(null, msg, Setup.title, JOptionPane.QUESTION_MESSAGE);
+                if (option == null) {
+                    break;
+                }
 
-            switch (option) {
-                case "1" -> CadastrarEquipeView.getInstance().run();
-                case "2" -> CadastrarPilotoView.getInstance().run();
-                case "3" -> CadastrarVeiculoView.getInstance().run();
-                case "4" -> CorridaView.getInstance().run();
-                case "5" -> RelatorioView.getInstance().run();
-                case "0" ->
-                    JOptionPane.showMessageDialog(null, "Sistema encerrado", Setup.title, JOptionPane.INFORMATION_MESSAGE);
-                default -> {
-                    if (option.isEmpty()) {
-                        JOptionPane.showMessageDialog(null, "Campo vazio. Informe uma opcao.", Setup.title, JOptionPane.WARNING_MESSAGE);
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Opcao invalida", Setup.title, JOptionPane.WARNING_MESSAGE);
+                switch (option) {
+                    case "1" ->
+                        CadastrarEquipeView.getInstance().run();
+                    case "2" ->
+                        CadastrarPilotoView.getInstance().run();
+                    case "3" ->
+                        CadastrarVeiculoView.getInstance().run();
+                    case "4" ->
+                        CorridaView.getInstance().run();
+                    case "5" ->
+                        RelatorioView.getInstance().run();
+                    case "0" ->
+                        JOptionPane.showMessageDialog(null, "Sistema encerrado", Setup.title, JOptionPane.INFORMATION_MESSAGE);
+                    default -> {
+                        if (option.isEmpty()) {
+                            JOptionPane.showMessageDialog(null, "Campo vazio. Informe uma opcao.", Setup.title, JOptionPane.WARNING_MESSAGE);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Opcao invalida", Setup.title, JOptionPane.WARNING_MESSAGE);
+                        }
                     }
                 }
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null,
+                        "Erro inesperado.", Setup.title, JOptionPane.ERROR_MESSAGE);
+                e.printStackTrace();
             }
+
         }
+
     }
 }

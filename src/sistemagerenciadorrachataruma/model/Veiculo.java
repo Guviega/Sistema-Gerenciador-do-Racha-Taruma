@@ -10,7 +10,7 @@ import java.util.Objects;
  *
  * @author DELL
  */
-public class Veiculo {
+public class Veiculo implements Participante{
     
     private int numero;
     private TipoVeiculo tipoVeiculo;
@@ -80,6 +80,11 @@ public class Veiculo {
 
     public void setPiloto(Piloto piloto) {
         this.piloto = piloto;
+    }
+
+    @Override
+    public int getId() {
+        return numero;
     }
     
     
