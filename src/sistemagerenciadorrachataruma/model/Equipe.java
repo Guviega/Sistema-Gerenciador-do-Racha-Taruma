@@ -16,7 +16,6 @@ public class Equipe implements Participante{
     
     private int numero;
     private String nome;
-    List<Piloto> pilotos;
 
     public Equipe(int numero, String nome) {
         this.numero = numero;
@@ -62,14 +61,6 @@ public class Equipe implements Participante{
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public List<Piloto> getPilotos() {
-        return pilotos;
-    }
-
-    public void setPilotos(List<Piloto> pilotos) {
-        this.pilotos = pilotos;
     }
 
     @Override

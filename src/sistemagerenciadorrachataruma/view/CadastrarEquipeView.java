@@ -33,7 +33,7 @@ public class CadastrarEquipeView implements Runnable {
                     "Qual o nome da equipe?", Setup.title, JOptionPane.QUESTION_MESSAGE);
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null,
-                    "Digite apenas numeros inteiros, por favor.", Setup.title, JOptionPane.ERROR_MESSAGE);
+                    "ERRO: O numero de uma equipe deve ser um numero inteiro.", Setup.title, JOptionPane.ERROR_MESSAGE);
             return;
         }
     }
