@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
  * @author DELL
  */
 public class Corrida {
-    
+
     private int numero;
     private LocalDateTime dataHora;
     private Veiculo veiculo1, veiculo2, vencedor;
@@ -21,7 +21,7 @@ public class Corrida {
         this.dataHora = dataHora;
         this.veiculo1 = veiculo1;
     }
-    
+
     public Corrida(LocalDateTime dataHora, Veiculo veiculo1, Veiculo veiculo2, Veiculo vencedor, double tempoVeiculo1, double tempoVeiculo2, double velocidadeVeiculo1, double velocidadeVeiculo2) {
         this.dataHora = dataHora;
         this.veiculo1 = veiculo1;
@@ -84,5 +84,13 @@ public class Corrida {
     public void setVelocidadeVeiculo2(double velocidadeVeiculo2) {
         this.velocidadeVeiculo2 = velocidadeVeiculo2;
     }
-    
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
 }

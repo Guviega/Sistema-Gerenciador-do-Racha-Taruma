@@ -8,37 +8,37 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import sistemagerenciadorrachataruma.model.Equipe;
+import sistemagerenciadorrachataruma.model.Corrida;
 
 /**
  *
  * @author DELL
  */
-public class EquipeDAO implements DAO<Equipe> {
+public class CorridaDAO implements DAO<Corrida> {
     
-    private static final EquipeDAO instance = new EquipeDAO();
-    private final Map<Integer, Equipe> equipes = new HashMap<>();
+    private static final CorridaDAO instance = new CorridaDAO();
+    private final Map<Integer, Corrida> corridas = new HashMap<>();
 
-    public EquipeDAO() {
+    public CorridaDAO() {
     }
     
-    public static EquipeDAO getInstance(){
+    public static CorridaDAO getInstance(){
         return instance;
     }
 
     @Override
-    public void cadastrar(Equipe t) {
-        equipes.put(t.getId(), t);
+    public void cadastrar(Corrida t) {
+        corridas.put(t.getNumero(), t);
     }
 
     @Override
-    public Equipe buscaPorId(int id) {
-        return equipes.get(id);
+    public Corrida buscaPorId(int id) {
+        return corridas.get(id);
     }
 
     @Override
     public List listar() {
-        return new ArrayList(equipes.values());
+        return new ArrayList(corridas.values());
     }
     
 }

@@ -9,36 +9,37 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import sistemagerenciadorrachataruma.model.Equipe;
+import sistemagerenciadorrachataruma.model.Piloto;
 
 /**
  *
  * @author DELL
  */
-public class EquipeDAO implements DAO<Equipe> {
-    
-    private static final EquipeDAO instance = new EquipeDAO();
-    private final Map<Integer, Equipe> equipes = new HashMap<>();
+public class PilotoDAO implements DAO<Piloto> {
 
-    public EquipeDAO() {
+    private static final PilotoDAO instance = new PilotoDAO();
+    private final Map<Integer, Piloto> pilotos = new HashMap<>();
+
+    public PilotoDAO() {
     }
-    
-    public static EquipeDAO getInstance(){
+
+    public static PilotoDAO getInstance() {
         return instance;
     }
 
     @Override
-    public void cadastrar(Equipe t) {
-        equipes.put(t.getId(), t);
+    public void cadastrar(Piloto t) {
+        pilotos.put(t.getId(), t);
     }
 
     @Override
-    public Equipe buscaPorId(int id) {
-        return equipes.get(id);
+    public Piloto buscaPorId(int id) {
+        return pilotos.get(id);
     }
 
     @Override
     public List listar() {
-        return new ArrayList(equipes.values());
+        return new ArrayList(pilotos.values());
     }
-    
+
 }
