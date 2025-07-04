@@ -10,6 +10,9 @@ package sistemagerenciadorrachataruma;
  */
 public class Setup {
     
+    /**
+     * String title: Titulo a ser exibido em todos JOptionPane.
+     */
     public static String title = "Sistema Gerenciador do Racha Taruma";
     
 }

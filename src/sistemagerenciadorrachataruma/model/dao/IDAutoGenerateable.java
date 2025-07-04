@@ -10,6 +10,9 @@ package sistemagerenciadorrachataruma.model.dao;
  */
 public interface IDAutoGenerateable {
     
+    /**
+     * Interface que implementa os atributos e metodos necessarios para uma classe que tenha um ID auto-gerado.
+     */
     int nextId = 1;
     int atribuirId();
     

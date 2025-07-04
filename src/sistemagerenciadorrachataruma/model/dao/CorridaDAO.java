@@ -14,11 +14,11 @@ import sistemagerenciadorrachataruma.model.Corrida;
  *
  * @author DELL
  */
-public class CorridaDAO implements DAO<Corrida> , IDAutoGenerateable{
+public class CorridaDAO implements DAO<Corrida>, IDAutoGenerateable {
 
     private static final CorridaDAO instance = new CorridaDAO();
     private final Map<Integer, Corrida> corridas = new HashMap<>();
-    
+
     private int nextId = 1;
 
     private CorridaDAO() {
@@ -42,7 +42,12 @@ public class CorridaDAO implements DAO<Corrida> , IDAutoGenerateable{
     public List<Corrida> listar() {
         return new ArrayList(corridas.values());
     }
-    
+
+    /**
+     * Atribui um ID auto-gerado e incrementa para o proximo.
+     * Semelhante a SEQUENCES em SQL
+     * @return 
+     */
     public int atribuirId() {
         int id = instance.nextId;
         instance.nextId++;

@@ -10,6 +10,11 @@ package sistemagerenciadorrachataruma;
  */
 public class Util {
 
+    /**
+     * Metodo de validação de CPF, conforme algoritmo oficial disponibilizado pela Receita Federal
+     * @param cpf CPF a ser validado
+     * @return CPF valido (true) ou invalido (false)
+     */
     public static boolean validaCPF(String cpf) {
         // Remove caracteres não numéricos
         cpf = cpf.replaceAll("[^\\d]", "");

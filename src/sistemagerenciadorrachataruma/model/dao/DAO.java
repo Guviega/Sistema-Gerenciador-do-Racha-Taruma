@@ -9,9 +9,14 @@ import java.util.List;
 /**
  *
  * @author DELL
+ * @param <T> The model class of DAO
  */
 public interface DAO <T> {
     
+    /**
+     * Interface DAO, apresentando todos os metodos que uma classe DAO deve conter, ao menos.
+     * @param t 
+     */
     void cadastrar(T t);
     T buscaPorId(int id);
     List<T> listar();

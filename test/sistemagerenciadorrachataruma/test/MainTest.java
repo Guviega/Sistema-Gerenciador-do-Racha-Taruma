@@ -4,9 +4,6 @@
  */
 package sistemagerenciadorrachataruma.test;
 
-import java.util.ArrayList;
-import sistemagerenciadorrachataruma.model.TipoVeiculo;
-import sistemagerenciadorrachataruma.model.dao.PilotoDAO;
 import sistemagerenciadorrachataruma.view.MainView;
 
 /**

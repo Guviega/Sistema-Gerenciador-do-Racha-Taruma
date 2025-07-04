@@ -20,6 +20,9 @@ import sistemagerenciadorrachataruma.model.dao.CorridaDAO;
  */
 public class CorridaControlller {
 
+    /**
+     * DAO de Corrida, com instancia unica conforme padrao Singleton
+     */
     CorridaDAO dao = CorridaDAO.getInstance();
 
     public void cadastrarCorrida(int idVeiculo1, int idVeiculo2, double tempoV1, double tempoV2, double velV1, double velV2) {
@@ -47,6 +50,11 @@ public class CorridaControlller {
         return c;
     }
 
+    /**
+     * Gera uma String como relatorio de uma corrida
+     * @param c Corrida a ser gerado o relatorio
+     * @return 
+     */
     public String geraRelatorio(Corrida c) {
         Veiculo v1 = c.getVeiculo1();
         Veiculo v2 = c.getVeiculo2();
@@ -69,6 +77,10 @@ public class CorridaControlller {
                 + "Tempo: " + c.getTempoVeiculo2() + "s  Velocidade: " + c.getVelocidadeVeiculo2() + " km/h\n\n";
     }
 
+    /**
+     * Salvar o relatorio de uma corrida, gerado com geraRelatorio(Corrida c) em um arquivo no diretorio (ROOT) do projeto.
+     * @param c 
+     */
     public void salvarRelatorio(Corrida c) {
         String nomeArquivo = c.getDataHora().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH-mm-ss"));
         String extensaoArquivo = ".log";

@@ -12,11 +12,12 @@ import java.util.Objects;
  */
 public class Piloto implements Identificavel {
 
-    private int id;
+    /**
+     * Atributos: id, cpf, nome
+     */
+    private final int id;
     private final String cpf;
-    //private Equipe equipe;
     private String nome;
-    //private Equipe equipe;
 
     public Piloto(int id, String cpf, String nome) {
         this.id = id;
@@ -24,6 +25,10 @@ public class Piloto implements Identificavel {
         this.nome = nome;
     }
 
+    /**
+     * hashCode usando cpf e nome para maior espalhamento
+     * @return 
+     */
     @Override
     public int hashCode() {
         int hash = 5;
@@ -32,6 +37,11 @@ public class Piloto implements Identificavel {
         return hash;
     }
 
+    /**
+     * Compara o cpf de dois pilotos. Pilotos com mesmo CPF tendem a identificar a mesma pessoa.
+     * @param obj
+     * @return 
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -58,16 +68,7 @@ public class Piloto implements Identificavel {
     public String getCpf() {
         return cpf;
     }
-
-    /*
-    public Equipe getEquipe() {
-        return equipe;
-    }
-
-    public void setEquipe(Equipe equipe) {
-        this.equipe = equipe;
-    }
-     */
+    
     @Override
     public int getId() {
         return id;

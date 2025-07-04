@@ -16,8 +16,20 @@ import sistemagerenciadorrachataruma.model.dao.VeiculoDAO;
  */
 public class VeiculoController {
 
-    private VeiculoDAO dao = VeiculoDAO.getInstance();
+    /**
+     * DAO de Veiculo, com instancia unica conforme padrao Singleton
+     */
+    private final VeiculoDAO dao = VeiculoDAO.getInstance();
 
+    /**
+     * Metodo de cadastro de veiculo. Recebe parametros de CadastrarVeiculoView, opera logicas necessarias e entao cadastra collection no DAO.
+     * 
+     * @param numero
+     * @param tipoVeiculo
+     * @param potencia
+     * @param modelo
+     * @param idPiloto 
+     */
     public void cadastrarVeiculo(int numero, int tipoVeiculo, int potencia, String modelo, int idPiloto) {
         TipoVeiculo[] tipos = TipoVeiculo.values();
         Veiculo v = new Veiculo(numero, tipos[tipoVeiculo], potencia, modelo, PilotoDAO.getInstance().buscaPorId(idPiloto));

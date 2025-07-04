@@ -8,7 +8,6 @@ import javax.swing.JOptionPane;
 import sistemagerenciadorrachataruma.Setup;
 import sistemagerenciadorrachataruma.control.CorridaControlller;
 import sistemagerenciadorrachataruma.control.VeiculoController;
-import sistemagerenciadorrachataruma.model.Corrida;
 import sistemagerenciadorrachataruma.model.Veiculo;
 
 /**
@@ -55,11 +54,11 @@ public class CorridaView implements Runnable {
                     "Hora de registrar os resultados!", Setup.title, JOptionPane.INFORMATION_MESSAGE);
 
             double tempoV1 = Double.parseDouble(JOptionPane.showInputDialog(null,
-                    "Qual o tempo do primeiro veiculo?\nEx.: 07.866", Setup.title, JOptionPane.QUESTION_MESSAGE));
+                    "Qual o tempo do primeiro veiculo?\nEx.: 7.866", Setup.title, JOptionPane.QUESTION_MESSAGE));
             double velV1 = Double.parseDouble(JOptionPane.showInputDialog(null,
                     "Qual a velocidade do primeiro veiculo?\nEx.: 182.67", Setup.title, JOptionPane.QUESTION_MESSAGE));
             double tempoV2 = Double.parseDouble(JOptionPane.showInputDialog(null,
-                    "Qual o tempo do segundo veiculo?\nEx.: 07.866", Setup.title, JOptionPane.QUESTION_MESSAGE));
+                    "Qual o tempo do segundo veiculo?\nEx.: 7.866", Setup.title, JOptionPane.QUESTION_MESSAGE));
             double velV2 = Double.parseDouble(JOptionPane.showInputDialog(null,
                     "Qual a velocidade do segundo veiculo?\nEx.: 182.67", Setup.title, JOptionPane.QUESTION_MESSAGE));
 

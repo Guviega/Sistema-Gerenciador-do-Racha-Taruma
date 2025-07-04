@@ -43,6 +43,12 @@ public class PilotoDAO implements DAO<Piloto>, IDAutoGenerateable{
         return new ArrayList(pilotos.values());
     }
     
+    /**
+     * Atribui um ID auto-gerado e incrementa para o proximo.
+     * Semelhante a SEQUENCES em SQL
+     * @return 
+     */
+    @Override
     public int atribuirId() {
         int id = PilotoDAO.nextId;
         PilotoDAO.nextId++;

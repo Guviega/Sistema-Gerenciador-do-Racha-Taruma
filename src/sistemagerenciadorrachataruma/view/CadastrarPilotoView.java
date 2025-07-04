@@ -6,9 +6,7 @@ package sistemagerenciadorrachataruma.view;
 
 import javax.swing.JOptionPane;
 import sistemagerenciadorrachataruma.Setup;
-import sistemagerenciadorrachataruma.Util;
 import sistemagerenciadorrachataruma.control.PilotoController;
-import sistemagerenciadorrachataruma.model.Piloto;
 
 /**
  *
@@ -17,7 +15,6 @@ import sistemagerenciadorrachataruma.model.Piloto;
 public class CadastrarPilotoView implements Runnable {
 
     private static final CadastrarPilotoView instance = new CadastrarPilotoView();
-    PilotoController controller = new PilotoController();
 
     private CadastrarPilotoView() {
     }
@@ -33,9 +30,7 @@ public class CadastrarPilotoView implements Runnable {
                     "Qual o nome do piloto?", Setup.title, JOptionPane.QUESTION_MESSAGE);
             String cpf = JOptionPane.showInputDialog(null,
                     "Qual o CPF do piloto?", Setup.title, JOptionPane.QUESTION_MESSAGE).replaceAll("[^\\d]", "");
-            Piloto p = new Piloto(controller.atribuirId(), cpf, nome);
-            controller.cadastrarPiloto(p);
-            System.out.println(p);
+            new PilotoController().cadastrarPiloto(cpf, nome);
         } catch (IllegalArgumentException e) {
             JOptionPane.showMessageDialog(null,
                     "ERRO nos dados fornecidos:\n" + e.getMessage(), Setup.title, JOptionPane.ERROR_MESSAGE);

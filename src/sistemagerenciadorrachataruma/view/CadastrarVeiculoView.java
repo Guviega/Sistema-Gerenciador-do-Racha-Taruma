@@ -10,7 +10,6 @@ import sistemagerenciadorrachataruma.control.PilotoController;
 import sistemagerenciadorrachataruma.control.VeiculoController;
 import sistemagerenciadorrachataruma.model.Piloto;
 import sistemagerenciadorrachataruma.model.TipoVeiculo;
-import sistemagerenciadorrachataruma.model.Veiculo;
 
 /**
  *

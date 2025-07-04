@@ -4,10 +4,7 @@
  */
 package sistemagerenciadorrachataruma.control;
 
-import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JOptionPane;
-import sistemagerenciadorrachataruma.Setup;
 import sistemagerenciadorrachataruma.Util;
 import sistemagerenciadorrachataruma.model.Piloto;
 import sistemagerenciadorrachataruma.model.dao.PilotoDAO;
@@ -18,13 +15,18 @@ import sistemagerenciadorrachataruma.model.dao.PilotoDAO;
  */
 public class PilotoController {
 
-    private PilotoDAO dao = PilotoDAO.getInstance();
+    /**
+     * DAO de Piloto, com instancia unica conforme padrao Singleton
+     */
+    private final PilotoDAO dao = PilotoDAO.getInstance();
 
-    public void cadastrarPiloto(Piloto p) {
+    public void cadastrarPiloto(String cpf, String nome) {
+        Piloto p = new Piloto(dao.atribuirId(), cpf, nome);
         if (!Util.validaCPF(p.getCpf())) {
             throw new IllegalArgumentException("CPF Invalido.");
         } else {
             dao.cadastrar(p);
+            System.out.println(p);
         }
     }
 

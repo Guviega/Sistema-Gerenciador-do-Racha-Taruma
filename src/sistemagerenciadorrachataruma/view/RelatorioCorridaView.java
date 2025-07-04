@@ -15,15 +15,15 @@ import sistemagerenciadorrachataruma.model.Corrida;
  *
  * @author DELL
  */
-public class RelatorioView implements Runnable {
+public class RelatorioCorridaView implements Runnable {
 
-    private static final RelatorioView instance = new RelatorioView();
+    private static final RelatorioCorridaView instance = new RelatorioCorridaView();
 
-    private RelatorioView() {
+    private RelatorioCorridaView() {
 
     }
 
-    public static RelatorioView getInstance() {
+    public static RelatorioCorridaView getInstance() {
         return instance;
     }
 

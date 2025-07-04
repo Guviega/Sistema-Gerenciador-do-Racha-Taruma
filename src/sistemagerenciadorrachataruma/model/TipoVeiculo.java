@@ -10,6 +10,13 @@ package sistemagerenciadorrachataruma.model;
  */
 public enum TipoVeiculo {
 
+    /**
+     * Um veiculo pode ter um tipo, especificado neste enum.
+     * ASPIRADO: Veiculos sem supercompressor em seu motor.
+     * TURBO: Veiculos com turbocompressor em seu motor.
+     * MOTO: Motocicletas em geral.
+     * DIESEL: Veiculos de linha Diesel.
+     */
     ASPIRADO,
     TURBO,
     MOTO,

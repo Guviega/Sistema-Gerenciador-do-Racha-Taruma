@@ -4,9 +4,12 @@
  */
 package sistemagerenciadorrachataruma.test;
 
+import java.time.LocalDateTime;
+import sistemagerenciadorrachataruma.model.Corrida;
 import sistemagerenciadorrachataruma.model.Piloto;
 import sistemagerenciadorrachataruma.model.TipoVeiculo;
 import sistemagerenciadorrachataruma.model.Veiculo;
+import sistemagerenciadorrachataruma.model.dao.CorridaDAO;
 import sistemagerenciadorrachataruma.model.dao.PilotoDAO;
 import sistemagerenciadorrachataruma.model.dao.VeiculoDAO;
 
@@ -25,7 +28,7 @@ public class PreAllocatedData implements Runnable {
         pilotoDAO.cadastrar(new Piloto(pilotoDAO.atribuirId(), "26036377037", "Antony"));
         pilotoDAO.cadastrar(new Piloto(pilotoDAO.atribuirId(), "31406420085", "Senna"));
         pilotoDAO.cadastrar(new Piloto(pilotoDAO.atribuirId(), "30636050009", "Karen"));
-        
+
         VeiculoDAO veiculoDAO = VeiculoDAO.getInstance();
         veiculoDAO.cadastrar(new Veiculo(10, TipoVeiculo.ASPIRADO, 101, "Gol", pilotoDAO.buscaPorId(1)));
         veiculoDAO.cadastrar(new Veiculo(20, TipoVeiculo.TURBO, 175, "Civic", pilotoDAO.buscaPorId(1)));
@@ -35,6 +38,18 @@ public class PreAllocatedData implements Runnable {
         veiculoDAO.cadastrar(new Veiculo(98, TipoVeiculo.DIESEL, 280, "Ranger", pilotoDAO.buscaPorId(6)));
         veiculoDAO.cadastrar(new Veiculo(308, TipoVeiculo.ASPIRADO, 140, "Golf", pilotoDAO.buscaPorId(2)));
         veiculoDAO.cadastrar(new Veiculo(144, TipoVeiculo.MOTO, 101, "S1000RR", pilotoDAO.buscaPorId(2)));
+
+        CorridaDAO corridaDAO = CorridaDAO.getInstance();
+        corridaDAO.cadastrar(new Corrida(corridaDAO.atribuirId(),
+                LocalDateTime.now(),
+                veiculoDAO.buscaPorId(144),
+                veiculoDAO.buscaPorId(308),
+                veiculoDAO.buscaPorId(308),
+                7.86,
+                6.89,
+                187,
+                192));
+
     }
 
 }

@@ -10,8 +10,9 @@ package sistemagerenciadorrachataruma.model;
  */
 public interface Identificavel {
     
-    /*
-    Tudo que for participante deve ter um atributo inteiro como identificador
+    /**
+    Tudo que deve ser unicamente identificavel no projeto deve ter um atributo inteiro como identificador
+     * @return O atributo (int) identificador do objeto.
     */
     int getId();
     

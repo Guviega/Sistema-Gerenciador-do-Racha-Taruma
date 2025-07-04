@@ -6,7 +6,6 @@ package sistemagerenciadorrachataruma.view;
 
 import javax.swing.JOptionPane;
 import sistemagerenciadorrachataruma.Setup;
-import sistemagerenciadorrachataruma.control.PilotoController;
 
 /**
  *
@@ -53,7 +52,7 @@ public class MainView implements Runnable {
                     case "3" ->
                         CorridaView.getInstance().run();
                     case "4" ->
-                        RelatorioView.getInstance().run();
+                        RelatorioCorridaView.getInstance().run();
                     case "0" ->
                         JOptionPane.showMessageDialog(null, "Sistema encerrado", Setup.title, JOptionPane.INFORMATION_MESSAGE);
                     default -> {
