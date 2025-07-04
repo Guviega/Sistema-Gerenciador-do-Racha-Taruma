@@ -9,10 +9,14 @@ package sistemagerenciadorrachataruma.model;
  * @author DELL
  */
 public enum TipoVeiculo {
-    
+
     ASPIRADO,
     TURBO,
     MOTO,
-    DIESEL
+    DIESEL;
 
+    @Override
+    public String toString() {
+        return "TipoVeiculo=" + name() + ' ';
+    }
 }

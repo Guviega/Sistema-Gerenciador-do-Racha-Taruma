@@ -12,8 +12,12 @@ import java.util.Objects;
  *
  * @author DELL
  */
-public class Equipe implements Participante{
-    
+
+/* DEPRECATED
+
+
+public class Equipe implements Participante {
+
     private int numero;
     private String nome;
 
@@ -44,8 +48,6 @@ public class Equipe implements Participante{
         final Equipe other = (Equipe) obj;
         return this.numero == other.numero;
     }
-    
-    
 
     public int getNumero() {
         return numero;
@@ -67,10 +69,12 @@ public class Equipe implements Participante{
     public int getId() {
         return numero;
     }
-    
-    
-    
-    
-    
+
+    @Override
+    public String toString() {
+        return "Equipe{" + "numero=" + numero + ", nome=" + nome + '}';
+    }
+
 }
 
+*/

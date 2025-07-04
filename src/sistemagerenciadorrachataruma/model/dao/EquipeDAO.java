@@ -14,12 +14,16 @@ import sistemagerenciadorrachataruma.model.Equipe;
  *
  * @author DELL
  */
+
+/* DEPRECATED
+
+
 public class EquipeDAO implements DAO<Equipe> {
     
     private static final EquipeDAO instance = new EquipeDAO();
     private final Map<Integer, Equipe> equipes = new HashMap<>();
 
-    public EquipeDAO() {
+    private EquipeDAO() {
     }
     
     public static EquipeDAO getInstance(){
@@ -42,3 +46,4 @@ public class EquipeDAO implements DAO<Equipe> {
     }
     
 }
+*/

@@ -4,15 +4,16 @@
  */
 package sistemagerenciadorrachataruma.view;
 
-import javax.swing.JOptionPane;
-import sistemagerenciadorrachataruma.Setup;
-
 /**
  *
  * @author DELL
  */
+
+/* DEPRECATED
 public class CadastrarEquipeView implements Runnable {
 
+    
+    
     private static CadastrarEquipeView instance = new CadastrarEquipeView();
 
     private CadastrarEquipeView() {
@@ -38,4 +39,6 @@ public class CadastrarEquipeView implements Runnable {
         }
     }
 
+
 }
+*/

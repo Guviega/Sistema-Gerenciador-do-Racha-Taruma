@@ -6,6 +6,7 @@ package sistemagerenciadorrachataruma.view;
 
 import javax.swing.JOptionPane;
 import sistemagerenciadorrachataruma.Setup;
+import sistemagerenciadorrachataruma.control.PilotoController;
 
 /**
  *
@@ -27,11 +28,10 @@ public class MainView implements Runnable {
         String msg
                 = """
                   Escolha uma opcao: 
-                  1 - Cadastrar Equipe 
-                  2 - Cadastrar Piloto 
-                  3 - Cadastrar Veiculo 
-                  4 - Iniciar corrida 
-                  5 - Visualizar resultados 
+                  1 - Cadastrar Piloto 
+                  2 - Cadastrar Veiculo 
+                  3 - Registrar corrida 
+                  4 - Visualizar resultados 
                   0 - Sair 
                   """;
 
@@ -47,14 +47,12 @@ public class MainView implements Runnable {
 
                 switch (option) {
                     case "1" ->
-                        CadastrarEquipeView.getInstance().run();
-                    case "2" ->
                         CadastrarPilotoView.getInstance().run();
-                    case "3" ->
+                    case "2" ->
                         CadastrarVeiculoView.getInstance().run();
-                    case "4" ->
+                    case "3" ->
                         CorridaView.getInstance().run();
-                    case "5" ->
+                    case "4" ->
                         RelatorioView.getInstance().run();
                     case "0" ->
                         JOptionPane.showMessageDialog(null, "Sistema encerrado", Setup.title, JOptionPane.INFORMATION_MESSAGE);

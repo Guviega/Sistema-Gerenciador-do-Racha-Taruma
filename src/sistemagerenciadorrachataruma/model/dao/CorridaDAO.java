@@ -19,7 +19,7 @@ public class CorridaDAO implements DAO<Corrida> {
     private static final CorridaDAO instance = new CorridaDAO();
     private final Map<Integer, Corrida> corridas = new HashMap<>();
 
-    public CorridaDAO() {
+    private CorridaDAO() {
     }
     
     public static CorridaDAO getInstance(){

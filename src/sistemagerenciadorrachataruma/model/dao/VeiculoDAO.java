@@ -20,7 +20,7 @@ public class VeiculoDAO implements DAO<Veiculo> {
     private static final VeiculoDAO instance = new VeiculoDAO();
     private final Map<Integer, Veiculo> veiculos = new HashMap<>();
 
-    public VeiculoDAO() {
+    private VeiculoDAO() {
     }
 
     public static VeiculoDAO getInstance() {

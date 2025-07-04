@@ -5,6 +5,7 @@
 package sistemagerenciadorrachataruma.model;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 /**
  *
@@ -17,12 +18,8 @@ public class Corrida {
     private Veiculo veiculo1, veiculo2, vencedor;
     private double tempoVeiculo1, tempoVeiculo2, velocidadeVeiculo1, velocidadeVeiculo2;
 
-    public Corrida(LocalDateTime dataHora, Veiculo veiculo1) {
-        this.dataHora = dataHora;
-        this.veiculo1 = veiculo1;
-    }
-
-    public Corrida(LocalDateTime dataHora, Veiculo veiculo1, Veiculo veiculo2, Veiculo vencedor, double tempoVeiculo1, double tempoVeiculo2, double velocidadeVeiculo1, double velocidadeVeiculo2) {
+    public Corrida(int numero, LocalDateTime dataHora, Veiculo veiculo1, Veiculo veiculo2, Veiculo vencedor, double tempoVeiculo1, double tempoVeiculo2, double velocidadeVeiculo1, double velocidadeVeiculo2) {
+        this.numero = numero;
         this.dataHora = dataHora;
         this.veiculo1 = veiculo1;
         this.veiculo2 = veiculo2;
@@ -91,6 +88,35 @@ public class Corrida {
 
     public void setNumero(int numero) {
         this.numero = numero;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 83 * hash + this.numero;
+        hash = 83 * hash + Objects.hashCode(this.dataHora);
+        hash = 83 * hash + Objects.hashCode(this.vencedor);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Corrida other = (Corrida) obj;
+        return this.numero == other.numero;
+    }
+
+    @Override
+    public String toString() {
+        return "Corrida{" + "numero=" + numero + ", dataHora=" + dataHora + ", veiculo1=" + veiculo1 + ", veiculo2=" + veiculo2 + ", vencedor=" + vencedor + ", tempoVeiculo1=" + tempoVeiculo1 + ", tempoVeiculo2=" + tempoVeiculo2 + ", velocidadeVeiculo1=" + velocidadeVeiculo1 + ", velocidadeVeiculo2=" + velocidadeVeiculo2 + '}';
     }
 
 }

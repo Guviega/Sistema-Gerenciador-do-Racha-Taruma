@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import sistemagerenciadorrachataruma.model.Equipe;
 import sistemagerenciadorrachataruma.model.Piloto;
 
 /**
@@ -20,7 +19,7 @@ public class PilotoDAO implements DAO<Piloto> {
     private static final PilotoDAO instance = new PilotoDAO();
     private final Map<Integer, Piloto> pilotos = new HashMap<>();
 
-    public PilotoDAO() {
+    private PilotoDAO() {
     }
 
     public static PilotoDAO getInstance() {
