@@ -14,6 +14,6 @@ public interface DAO <T> {
     
     void cadastrar(T t);
     T buscaPorId(int id);
-    List listar();
+    List<T> listar();
     
 }

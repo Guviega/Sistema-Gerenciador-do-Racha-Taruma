@@ -14,10 +14,12 @@ import sistemagerenciadorrachataruma.model.Piloto;
  *
  * @author DELL
  */
-public class PilotoDAO implements DAO<Piloto> {
+public class PilotoDAO implements DAO<Piloto>, IDAutoGenerateable{
 
     private static final PilotoDAO instance = new PilotoDAO();
     private final Map<Integer, Piloto> pilotos = new HashMap<>();
+    
+    private static int nextId = 1;
 
     private PilotoDAO() {
     }
@@ -37,8 +39,14 @@ public class PilotoDAO implements DAO<Piloto> {
     }
 
     @Override
-    public List listar() {
+    public List<Piloto> listar() {
         return new ArrayList(pilotos.values());
+    }
+    
+    public int atribuirId() {
+        int id = PilotoDAO.nextId;
+        PilotoDAO.nextId++;
+        return id;
     }
 
 }

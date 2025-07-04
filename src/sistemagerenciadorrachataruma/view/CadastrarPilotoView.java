@@ -7,6 +7,8 @@ package sistemagerenciadorrachataruma.view;
 import javax.swing.JOptionPane;
 import sistemagerenciadorrachataruma.Setup;
 import sistemagerenciadorrachataruma.Util;
+import sistemagerenciadorrachataruma.control.PilotoController;
+import sistemagerenciadorrachataruma.model.Piloto;
 
 /**
  *
@@ -15,6 +17,7 @@ import sistemagerenciadorrachataruma.Util;
 public class CadastrarPilotoView implements Runnable {
 
     private static final CadastrarPilotoView instance = new CadastrarPilotoView();
+    PilotoController controller = new PilotoController();
 
     private CadastrarPilotoView() {
     }
@@ -26,23 +29,17 @@ public class CadastrarPilotoView implements Runnable {
     @Override
     public void run() {
         try {
-            int numero = Integer.parseInt(JOptionPane.showInputDialog(null,
-                    "Qual o numero do piloto?", Setup.title, JOptionPane.QUESTION_MESSAGE));
             String nome = JOptionPane.showInputDialog(null,
                     "Qual o nome do piloto?", Setup.title, JOptionPane.QUESTION_MESSAGE);
             String cpf = JOptionPane.showInputDialog(null,
-                    "Qual o CPF do piloto?", Setup.title, JOptionPane.QUESTION_MESSAGE);
-            if (!Util.validaCPF(cpf)) {
-                JOptionPane.showMessageDialog(null,
-                        "ERRO: O CPF informado eh invalido..", Setup.title, JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-            int equipe = Integer.parseInt(JOptionPane.showInputDialog(null,
-                    "Qual o numero da equipe do piloto?", Setup.title, JOptionPane.QUESTION_MESSAGE));
-        } catch (NumberFormatException e) {
+                    "Qual o CPF do piloto?", Setup.title, JOptionPane.QUESTION_MESSAGE).replaceAll("[^\\d]", "");
+            Piloto p = new Piloto(controller.atribuirId(), cpf, nome);
+            controller.cadastrarPiloto(p);
+            System.out.println(p);
+        } catch (IllegalArgumentException e) {
             JOptionPane.showMessageDialog(null,
-                    "ERRO: O numero de uma equipe deve ser um numero inteiro.", Setup.title, JOptionPane.ERROR_MESSAGE);
-            return;
+                    "ERRO nos dados fornecidos:\n" + e.getMessage(), Setup.title, JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
         }
     }
 

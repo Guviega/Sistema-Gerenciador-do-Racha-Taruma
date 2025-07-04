@@ -19,7 +19,7 @@ public class Util {
             return false;
         }
 
-        // Verifica se todos os dígitos são iguais (ex: 11111111111)
+        // Verifica se todos os dígitos são iguais
         if (cpf.matches("(\\d)\\1{10}")) {
             return false;
         }

@@ -10,14 +10,16 @@ import java.util.Objects;
  *
  * @author DELL
  */
-public class Piloto implements Participante {
+public class Piloto implements Identificavel {
 
-    private int numero;
-    private String cpf, nome;
+    private int id;
+    private final String cpf;
+    //private Equipe equipe;
+    private String nome;
     //private Equipe equipe;
 
-    public Piloto(int numero, String cpf, String nome) {
-        this.numero = numero;
+    public Piloto(int id, String cpf, String nome) {
+        this.id = id;
         this.cpf = cpf;
         this.nome = nome;
     }
@@ -53,6 +55,10 @@ public class Piloto implements Participante {
         this.nome = nome;
     }
 
+    public String getCpf() {
+        return cpf;
+    }
+
     /*
     public Equipe getEquipe() {
         return equipe;
@@ -61,16 +67,15 @@ public class Piloto implements Participante {
     public void setEquipe(Equipe equipe) {
         this.equipe = equipe;
     }
-    */
-
+     */
     @Override
     public int getId() {
-        return numero;
+        return id;
     }
 
     @Override
     public String toString() {
-        return "Piloto{" + "numero=" + numero + ", cpf=" + cpf + ", nome=" + nome +/* ", equipe=" + equipe +*/ '}';
+        return "Piloto{" + "id=" + id + ", cpf=" + cpf + ", nome=" + nome + '}';
     }
 
 }

@@ -4,6 +4,8 @@
  */
 package sistemagerenciadorrachataruma.view;
 
+import sistemagerenciadorrachataruma.model.Corrida;
+
 /**
  *
  * @author DELL
@@ -22,8 +24,11 @@ public class CorridaView implements Runnable {
 
     @Override
     public void run() {
-        //TODO
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        try {
+            String msg = "Escolha o primeiro veiculo a correr:\n";
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

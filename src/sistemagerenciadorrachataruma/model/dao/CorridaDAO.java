@@ -14,21 +14,23 @@ import sistemagerenciadorrachataruma.model.Corrida;
  *
  * @author DELL
  */
-public class CorridaDAO implements DAO<Corrida> {
-    
+public class CorridaDAO implements DAO<Corrida> , IDAutoGenerateable{
+
     private static final CorridaDAO instance = new CorridaDAO();
     private final Map<Integer, Corrida> corridas = new HashMap<>();
+    
+    private int nextId = 1;
 
     private CorridaDAO() {
     }
-    
-    public static CorridaDAO getInstance(){
+
+    public static CorridaDAO getInstance() {
         return instance;
     }
 
     @Override
     public void cadastrar(Corrida t) {
-        corridas.put(t.getNumero(), t);
+        corridas.put(t.getId(), t);
     }
 
     @Override
@@ -41,4 +43,10 @@ public class CorridaDAO implements DAO<Corrida> {
         return new ArrayList(corridas.values());
     }
     
+    public int atribuirId() {
+        int id = instance.nextId;
+        instance.nextId++;
+        return id;
+    }
+
 }

@@ -10,17 +10,18 @@ import java.util.Objects;
  *
  * @author DELL
  */
-public class Veiculo implements Participante{
-    
+public class Veiculo implements Identificavel {
+
     private int numero;
     private TipoVeiculo tipoVeiculo;
     private int potencia;
     private String modelo;
     private Piloto piloto;
 
-    public Veiculo(int numero, TipoVeiculo tipoVeiculo, String modelo, Piloto piloto) {
+    public Veiculo(int numero, TipoVeiculo tipoVeiculo, int potencia, String modelo, Piloto piloto) {
         this.numero = numero;
         this.tipoVeiculo = tipoVeiculo;
+        this.potencia = potencia;
         this.modelo = modelo;
         this.piloto = piloto;
     }
@@ -82,11 +83,22 @@ public class Veiculo implements Participante{
         this.piloto = piloto;
     }
 
+    public int getPotencia() {
+        return potencia;
+    }
+
+    public void setPotencia(int potencia) {
+        this.potencia = potencia;
+    }
+
     @Override
     public int getId() {
         return numero;
     }
-    
-    
-    
+
+    @Override
+    public String toString() {
+        return "Veiculo{" + "numero=" + numero + ", tipoVeiculo=" + tipoVeiculo + ", potencia=" + potencia + ", modelo=" + modelo + ", piloto=" + piloto + '}';
+    }
+
 }
