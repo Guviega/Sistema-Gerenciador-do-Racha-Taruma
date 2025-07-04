@@ -8,15 +8,28 @@ import sistemagerenciadorrachataruma.view.MainView;
 
 /**
  *
- * @author DELL
+ * @author
  */
 public class Main {
 
     /**
+     * FUNCIONAMENTO DO SISTEMA: 
+     * 
+     * 1- CADASTRE AO MENOS 2 PILOTOS 
+     * 
+     * 2- PARA CADA
+     * PILOTO CADASTRE 1 VEICULO 
+     * 
+     * 3- REALIZE UMA CORRIDA, INFORMANDO, PARA CADA
+     * VEICULO O TEMPO DE CORRIDA (201m) E A VELOCIDADE EM QUE CRUZOU A LINHA DE
+     * CHEGADA
+     * 
+     * 4- 
+     * 
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+
         MainView.getInstance().run();
     }
 
