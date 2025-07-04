@@ -39,7 +39,7 @@ public class CorridaDAO implements DAO<Corrida> , IDAutoGenerateable{
     }
 
     @Override
-    public List listar() {
+    public List<Corrida> listar() {
         return new ArrayList(corridas.values());
     }
     

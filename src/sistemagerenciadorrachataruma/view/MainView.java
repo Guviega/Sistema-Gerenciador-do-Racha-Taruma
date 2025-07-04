@@ -31,7 +31,7 @@ public class MainView implements Runnable {
                   1 - Cadastrar Piloto 
                   2 - Cadastrar Veiculo 
                   3 - Registrar corrida 
-                  4 - Visualizar resultados 
+                  4 - Gerar relatorio de corrida
                   0 - Sair 
                   """;
 

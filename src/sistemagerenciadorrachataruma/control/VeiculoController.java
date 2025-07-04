@@ -33,7 +33,7 @@ public class VeiculoController {
         return v;
     }
 
-    public List listarVeiculos() {
+    public List<Veiculo> listarVeiculos() {
         return dao.listar();
     }
 

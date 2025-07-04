@@ -37,7 +37,7 @@ public class VeiculoDAO implements DAO<Veiculo> {
     }
 
     @Override
-    public List listar() {
+    public List<Veiculo> listar() {
         return new ArrayList(veiculos.values());
     }
 
